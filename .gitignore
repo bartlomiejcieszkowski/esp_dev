@@ -1,2 +1,5 @@
 burn_env.sh
 esp-idf/
+build/
+nohup.out
+
