@@ -1,0 +1,14 @@
+#!/bin/bash
+
+if [[ -n "${BASH_SOURCE}" && ( "${BASH_SOURCE[0]}" == "${0}" ) ]]; then
+	echo "This script should be sourced not executed"
+	return 1
+fi
+
+export BURN_IDF_PATH=/path/to/esp-idf
+export BURN_UART=/dev/ttyUSB0
+export BURN_BAUD_RATE=115200
+export BURN_SSH_PORT=22
+export BURN_SSH_IP=0.1.2.3
+export BURN_SSH_USER=user
+
