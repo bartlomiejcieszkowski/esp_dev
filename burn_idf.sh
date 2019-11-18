@@ -1,4 +1,5 @@
 #!/bin/bash
+#author: Bartlomiej Cieszkowski <bartlomiej.cieszkowski@gmail.com>
 
 SCRIPT_HOME=`dirname "$0"`
 echo ${SCRIPT_HOME}
