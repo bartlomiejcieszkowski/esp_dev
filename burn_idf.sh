@@ -1,8 +1,24 @@
 #!/bin/bash
 
-source burn_env.sh
+SCRIPT_HOME=`dirname "$0"`
+echo ${SCRIPT_HOME}
+
+source ${SCRIPT_HOME}/burn_env.sh
 
 source ${BURN_IDF_PATH}/export.sh
+
+source ${BURN_IDF_PATH}/add_path.sh
+
+START_DIR=`pwd`
+if [ -z ${1+x} ]; then
+	echo "Running in ${START_DIR}"
+elif [ -d ${1} ]; then
+	echo "Running in ${START_DIR}/${1}"
+	cd ${START_DIR}/${1}
+else
+	echo "Invalid project directory"
+	exit -1
+fi
 
 set -ex
 
