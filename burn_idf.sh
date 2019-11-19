@@ -21,9 +21,21 @@ else
 	exit -1
 fi
 
+if [ -z ${2+x} ]; then
+	CMD=all_inclusive
+else
+	CMD=${2}
+fi
+
 set -ex
 
+if [ "${CMD}" != "all_inclusive" ]; then
+	idf.py ${CMD}
+	exit $?
+fi
+
 idf.py build
+
 
 ssh -p ${BURN_SSH_PORT} ${BURN_SSH_USER}@${BURN_SSH_IP} "cd /home/pi && ./gpio_dl_mode_on.sh && ./gpio_off_on.sh"
 

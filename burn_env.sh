@@ -6,7 +6,7 @@ if [[ -n "${BASH_SOURCE}" && ( "${BASH_SOURCE[0]}" == "${0}" ) ]]; then
 	return 1
 fi
 
-export BURN_IDF_PATH=/home/bart/esp_dev/esp-idf
+export BURN_IDF_PATH=`dirname $0`/esp-idf
 #export BURN_UART=/dev/ttyUSB0
 #export BURN_UART="/dev/serial/by-path/pci-0000:00:14.0-usb-0:1.2.4:1.0-port0"
 #export BURN_UART="/dev/serial/by-path/pci-0000\:00\:14.0-usb-0\:1.2.4\:1.0-port0"
